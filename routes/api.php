@@ -14,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+Route::get('ping', function () {
+    return response()->json('pong', 200);
+});
+
 Route::apiResources([
     'articles'=> ArticleController::class,
 ]);

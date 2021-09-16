@@ -15,6 +15,14 @@ class CreateArticlesTable extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
+            
+            $table->char('denomination', 255);
+            $table->char('serial_number', 255);
+            $table->boolean('archived')->default(false);
+            $table->enum("repair_state", ["pristine", "must_repair", "been_repaired"]);
+            $table->enum("type", ["consumable", "tooling"]);
+            
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -9,4 +9,13 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Article extends Model
 {
     use HasFactory, SoftDeletes;
+
+        protected $fillable = [         
+            "denomination",
+            "serial_number",
+            "archived",
+            "repair_state",
+            "type"
+        ];
+
 }

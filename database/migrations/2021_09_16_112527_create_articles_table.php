@@ -19,7 +19,7 @@ class CreateArticlesTable extends Migration
             $table->char('denomination', 255);
             $table->char('serial_number', 255);
             $table->boolean('archived')->default(false);
-            $table->enum("repair_state", ["pristine", "must_repair", "been_repaired"]);
+            $table->enum("repair_state", ["pristine", "must_repair", "been_repaired"])->default('pristine');
             $table->enum("type", ["consumable", "tooling"]);
             
             $table->softDeletes();
